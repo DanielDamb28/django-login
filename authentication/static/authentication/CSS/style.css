@@ -8,6 +8,11 @@ body{
     font-size: 1.2em;
 }
 
+.sucess-status{
+    color: lightgreen;
+    font-size: 1.2em;
+}
+
 .login-div{
     width: 30%;
     padding: 15px;

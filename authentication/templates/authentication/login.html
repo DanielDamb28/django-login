@@ -11,6 +11,11 @@
 <body>
     <div class="login-div">
         <h1>Login</h1>
+        <span class="sucess-status">
+            {% for message in messages %}
+                    {{message}}
+            {% endfor %}
+        </span>
         <span class="error-status">
             {{ error }}
             <br>

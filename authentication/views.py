@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -41,13 +42,14 @@ def cadastro_screen(request):
                 password = form.cleaned_data['password']
                 valid_user = User.objects.filter(username=username).first()
                 if valid_user:
-                    return render(request, 'authentication/cadastro.html', {'form': form, 'error': 'That username is already in use!!'})
+                    return render(request, 'authentication/cadastro.html', {'form': form, 'error': 'Esse usuário já está sendo utilizado'})
                 else:
                     new_user = User.objects.create_user(username, email, password, first_name=first_name, last_name=last_name)
                     send_mail('Registrado com Sucesso', 'Você foi cadastrado com sucesso em nosso site!', 'settings.EMAIL_HOST_USER', [email])
+                    messages.success(request, 'Usuário cadastrado com sucesso!')
                     return HttpResponseRedirect('/auth/login/')
             else:
-                return render(request, 'authentication/cadastro.html', {'form': form, 'error': 'Passwords must be equals'})
+                return render(request, 'authentication/cadastro.html', {'form': form, 'error': 'As senhas precisam ser iguais'})
         else:
             return render(request, 'authentication/cadastro.html', {'form': form})
 
