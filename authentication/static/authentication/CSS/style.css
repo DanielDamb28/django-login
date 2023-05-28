@@ -1,0 +1,75 @@
+body{
+    background: #A9CCE3;
+    font-size: 1.4em; 
+}
+
+.error-status{
+    color: red;
+    font-size: 1.2em;
+}
+
+.login-div{
+    width: 30%;
+    padding: 15px;
+    background: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-top: 15%;
+}
+
+.login-div input{
+    font-size: 1em; 
+}
+
+.input-button{
+    background: #5DADE2; 
+    width: 20%;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.input-button:hover{
+    background: #85C1E9;
+    color: white; 
+    transform: scale(1.08);
+}
+
+.link-customization{
+    text-decoration: none;
+    color: black;
+    text-decoration: underline;
+}
+
+.link-customization:hover{
+    color: #3498DB;
+    text-decoration: underline;
+    font-size: 1.1em;
+}
+
+.cadastro-div{
+    width: 30%;
+    padding: 15px;
+    background: #ffffff;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cadastro-form input{
+    text-align: center;
+}
+
+.cadastro-form label{
+    font-size: 0.8em;
+}
+
+.form{
+    display: block;
+    margin: 0 auto;
+}

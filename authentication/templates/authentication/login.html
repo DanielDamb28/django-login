@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'authentication/CSS/style.css'%}">
+    <title>Login Screen</title>
+</head>
+<body>
+    <div class="login-div">
+        <h1>Login</h1>
+        <span class="error-status">
+            {{ error }}
+            <br>
+        </span>
+        <form action=' {% url 'login' %}' method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br> 
+            <input class="input-button" type="submit" value="Entrar">
+        </form>
+        <br>
+        <a class="link-customization" href=" {% url 'cadastro' %}">Cadastre-se</a>
+        <br>
+    </div>
+</body>
+</html>

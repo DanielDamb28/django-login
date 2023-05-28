@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'authentication/CSS/style.css'%}">
+    <title>Tela de Cadastro</title>
+</head>
+<body>
+    <div class="cadastro-div">
+        <h1>Tela de Cadastro</h1>
+        <span class='error-status'> 
+            {{ error }}
+            {% for field in form %}
+                {{ field.errors }}
+            {% endfor %}
+        </span>
+        <br>
+        <form class="cadastro-form" action=' {% url 'cadastro' %}' method="post">
+            {% csrf_token %}
+            {{ form.as_div }}
+            <br>
+            <input class="input-button" type="submit" value="Cadastrar">
+        </form>
+        <br>
+        <br>
+        <a class="link-customization" href=" {% url 'login' %}">Fazer login</a>
+    </div>
+</body>
+</html>
